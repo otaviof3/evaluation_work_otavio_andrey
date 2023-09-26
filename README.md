@@ -38,8 +38,8 @@ The final part of this powerful code. Here, you can access the transaction log i
 Feel free to look up the code yourself! 
 
 ##WHO MADE THIS:
-Andrey Peil [git: AndreyPeil > https://github.com/AndreyPeil]
-Otávio D. [git: otaviof3 > https://github.com/otaviof3]
+Andrey Peil [github: AndreyPeil > https://github.com/AndreyPeil]
+Otávio D. [github: otaviof3 > https://github.com/otaviof3]
 
                                             //Trabalho de Laboratório de Algoritmos 2//
                                       Sistemas de Informação, Antonio Meneghetti Faculdade, 2023
