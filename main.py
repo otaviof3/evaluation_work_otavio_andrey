@@ -5,6 +5,7 @@ import sales
 import historic
 import menu
 # Throughout the program there are multiple error checks, for things like length of dictionary and Try/Except usage, I will not be noting down every one of them, as that would get very repetitive #
+# Main Python file of the code, only calls functions for starting the program and the other modules #
 def start_variables():
     """ Function that starts the variables of the program """
     product_stock = {}
