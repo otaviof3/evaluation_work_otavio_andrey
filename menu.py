@@ -1,5 +1,6 @@
+""" Menu module contains a function for calling the menu """
 def market_menu():
-    # The menu #
+    """ The menu, choose an option and it returns the option variable """
     print("    Extra Market ")
     print("--------------------  ")
     print('  Choose an option:     ')
@@ -13,7 +14,6 @@ def market_menu():
     print('8 - Sell a product.')
     print('9 - Show sales report.')
     print('-----Type any other number to exit the program-----')
-    # Chose an option and it returns the option variable #
     while True:
         option = input('Type the option you want through the numbers indicated above: ')
         try:
