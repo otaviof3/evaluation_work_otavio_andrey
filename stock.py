@@ -1,9 +1,8 @@
+""" Module for handling the many interactions you can have with the market stock """
 import historic
 def add_a_product(product_stock,changelog):
-    # Variable receives the name of the product #
+    """ Checks if the product informed is already in stock or not, if it isn't, adds it and it's amount, price and category through the structure requested, if it is, add informed amount to product stock """
     name = input("Name of the product you want to be added: ").capitalize()
-    # Check if the name informed is already in stock #
-    # If it is, add informed amount to product stock #
     if name in product_stock:
         while True:
             add_amount = input("Amount to be added to product stock: ")
@@ -20,7 +19,6 @@ def add_a_product(product_stock,changelog):
             changelog = historic.edit_changelog_amount(name,add_amount,product_stock,changelog)
         enter = input("Press enter to go back to the menu...")
         return product_stock,changelog
-    # If it isn't, adds it and it's amount, price and category through the structure requested #
     else:
         while True:
             amount = input('Amount of product in stock: ')
@@ -54,8 +52,8 @@ def add_a_product(product_stock,changelog):
         enter = input("Press enter to go back to the menu...")
         return product_stock,changelog
 
-# Changes the price of the product #
 def alter_product_price(product_stock,changelog):
+    """ Functions that changes the price of the product """
     if len(product_stock) == 0:
         print("No product found in stock.")
     else:
@@ -83,8 +81,8 @@ def alter_product_price(product_stock,changelog):
     enter = input("Press enter to go back to the menu...")
     return product_stock,changelog
 
-# Deletes a product through the pop function #
 def exclude_a_product(product_stock,changelog):
+    """ Deletes a product through the use of the pop function """
     if len(product_stock) == 0:
         print("No products found in stock.")
     else:
@@ -99,8 +97,8 @@ def exclude_a_product(product_stock,changelog):
     enter = input("Press enter to go back to the menu...")
     return product_stock,changelog
 
-# Searches the product and displays a multitude of informations from it #
 def search_a_product_by_name(product_stock,sales_report):
+    """ Searches the product and displays a multitude of informations from it """
     if len(product_stock) == 0:
         print("No products found in stock.")
     else:
@@ -121,8 +119,8 @@ def search_a_product_by_name(product_stock,sales_report):
             for value in product_stock[name]["price_historic"]:
                 print(value)
         print("Product category:",product_stock[name]["category"])
-        product_sales = {}
-        product_sales = historic.filter_sales_report(name,sales_report,product_sales)
+        product_sales = filter(lambda item: item[1]["codename"] == name, sales_report.items())
+        product_sales = dict(product_sales)
         if len(product_sales) != 0:
             for key in product_sales:
                 print("Sale number and product name:",key)
@@ -132,8 +130,8 @@ def search_a_product_by_name(product_stock,sales_report):
     enter = input("Press enter to go back to the menu...")
     return product_stock
 
-# Displays every product from a category #
 def search_a_category(product_stock):
+    """ Displays every product from a category """
     function_specific_count = 0
     if len(product_stock) == 0:
         print("No products found in stock.")
@@ -160,8 +158,8 @@ def search_a_category(product_stock):
     enter = input("Press enter to go back to the menu...")
     return product_stock
 
-# Show every product through a for loop #
 def view_all_products(product_stock):
+    """ Show every product through a for loop """
     if len(product_stock) == 0:
         print("No products found in stock.")
     else:
