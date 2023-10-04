@@ -4,16 +4,16 @@ import stock
 import sales
 import historic
 import menu
-# Throughout the program there are multiple error checks, for things like length of diccionary and Try/Except usage, I will not be noting down every one of them, as that would get very repetitive #
+# Throughout the program there are multiple error checks, for things like length of dictionary and Try/Except usage, I will not be noting down every one of them, as that would get very repetitive #
 def start_variables():
-    # Function that starts the variables of the program #
+    """ Function that starts the variables of the program """
     product_stock = {}
     changelog = []
     sales_report = {}
     sale_count = 0
     return product_stock,changelog,sales_report,sale_count
 def start_program(product_stock,changelog,sales_report,sale_count):
-    # Function that starts the program so that the main only calls functions #
+    """ Function that starts the program so that the main only calls functions """
     while True:
         option = menu.market_menu()
         if option == 1:
